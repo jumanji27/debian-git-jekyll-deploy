@@ -1,0 +1,11 @@
+#!/bin/bash -l
+GIT_REPO=$HOME/myrepo.git
+TMP_GIT_CLONE=$HOME/tmp/myrepo
+PUBLIC_WWW=$HOME/jumanji.name
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+cd $TMP_GIT_CLONE
+jekyll build -d $PUBLIC_WWW
+cd $HOME
+rm -Rf $TMP_GIT_CLONE
+exit
